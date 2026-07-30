@@ -1,0 +1,49 @@
+{
+  "name": "doi-ex",
+  "version": "1.0.0",
+  "description": "Bibliography DOI Extractor Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --windows"
+  },
+  "keywords": [
+    "doi",
+    "bibliography",
+    "extractor",
+    "research-papers",
+    "academic"
+  ],
+  "author": "DOI EX Team",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.doiex.app",
+    "productName": "DOI EX",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/logo.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DOI EX"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "index.html",
+      "style.css",
+      "app.js",
+      "assets/**/*"
+    ]
+  }
+}
